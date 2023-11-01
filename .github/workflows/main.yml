@@ -11,9 +11,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Get version
+        id: get_ver
         working-directory: ./
         run: |
-          echo 'APP_VERSION='$(jq -r '.version' ./package.json) >> $GITHUB_ENV
+          echo "APP_VERSION=$(jq -r '.version' ./package.json)" >> $GITHUB_OUTPUT
       - name: Create Version Badge
         uses: schneegans/dynamic-badges-action@v1.7.0
         with:
@@ -22,5 +23,5 @@ jobs:
           filename: aktions_learning_pathway.json # Use test.svg if you want to use the SVG mode.
           forceUpdate: true
           label: Version
-          message: $APP_VERSION
+          message: ${{ steps.get_ver.outputs.APP_VERSION }}
           color: green
