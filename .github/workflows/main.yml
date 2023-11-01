@@ -13,7 +13,7 @@ jobs:
       - name: Get version
         working-directory: ./
         run: |
-          APP_VERSION="$(jq -r '.version' ./package.json)"
+          echo 'APP_VERSION='$(jq -r '.version' ./package.json) >> $GITHUB_ENV
       - name: Create Version Badge
         uses: schneegans/dynamic-badges-action@v1.7.0
         with:
@@ -22,5 +22,5 @@ jobs:
           filename: aktions_learning_pathway.json # Use test.svg if you want to use the SVG mode.
           forceUpdate: true
           label: Version
-          message: "$APP_VERSION"
+          message: $APP_VERSION
           color: green
