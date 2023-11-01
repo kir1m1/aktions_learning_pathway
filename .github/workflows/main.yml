@@ -1,0 +1,23 @@
+name: create sheilds.io badge
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  create-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get version
+        working-directory: ./
+        run: |
+          app_version="$(jq -r '.version' package.json)"
+      - name: Create Version Badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.AKTIONS_LEARNING_PATHWAY }}
+          gistID: 006e759541874b2bc1b300078ad2a8b1
+          filename: aktions_learning_pathway.json # Use test.svg if you want to use the SVG mode.
+          label: Version
+          message: $app_version
+          color: green
