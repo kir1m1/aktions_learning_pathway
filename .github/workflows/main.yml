@@ -20,6 +20,7 @@ jobs:
           auth: ${{ secrets.AKTIONS_LEARNING_PATHWAY }}
           gistID: 006e759541874b2bc1b300078ad2a8b1
           filename: aktions_learning_pathway.json # Use test.svg if you want to use the SVG mode.
+          forceUpdate: true
           label: Version
           message: $app_version
           color: green
