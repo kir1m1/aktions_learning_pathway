@@ -1,4 +1,5 @@
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kir1m1/006e759541874b2bc1b300078ad2a8b1/raw/aktions-learning_pathway.json)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/kir1m1/006e759541874b2bc1b300078ad2a8b1/raw/aktions_learning_pathway.json)
+
 ## Essentials of GitHub Actions learning pathway demo repository
 
 This repository contains the core web application files and configuration you'll need to follow along through the [Essentials of automated application deployment with GitHub Actions & GitHub Pages](https://resources.github.com/learn/pathways/essentials/automated-application-deployment-with-github-actions-and-pages) module.
